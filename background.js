@@ -2,8 +2,8 @@
 // https://github.com/one10/chrome-auto-loop
 // based on chrome ext. examples
 
-var minDefaultSleep = 2000; // e.g., 3000 is 3 seconds
-var maxDefaultSleep = 4000; // e.g., 3000 is 3 seconds
+var minDefaultSleep = 60000; // e.g., 3000 is 3 seconds
+var maxDefaultSleep = 60000; // e.g., 3000 is 3 seconds
 
 if (localStorage["min_default_sleep"]) {
     minDefaultSleep = parseInt(localStorage["min_default_sleep"]);

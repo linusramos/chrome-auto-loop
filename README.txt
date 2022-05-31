@@ -7,8 +7,8 @@ A Chrome extension to auto-loop over URLs for simple testing or traffic gen
 
 Public domain
 
-This extension provides a quick way to simulate page loads - leveraging the real 
-browser to also load all images, JS, CSS, etc., making it more realistic than, say, 
+This extension provides a quick way to simulate page loads - leveraging the real
+browser to also load all images, JS, CSS, etc., making it more realistic than, say,
 curl or ab.
 
 NB: need to disable cache to ensure pages are really fetched every time
@@ -16,9 +16,19 @@ NB: need to disable cache to ensure pages are really fetched every time
 ================
 Install
 ================
-Go to chrome://chrome/extensions/ and install. Starts auto-looping through urls.json 
-right away. Press changing color icon to stop/start. Modify urls.json with your urls 
-and timeout values for each if necessary.
+1. Copy to PC
+    ex. /opt/chrome-auto-loop
+    # sudo cp -r chrome-auto-loop /opt/
+
+    in /opt/ you need to set owner to system user
+    # sudo chown -Rf user:user /opt/chrome-auto-loop
+
+2. Install on Chrome
+    Open Chrome to chrome://chrome/extensions/ and install.
+
+    Starts auto-looping through urls.txt right away.
+    Press changing color icon to stop/start.
+    Modify urls.txt with your urls.
 
 ================
 Configuration Options
@@ -41,7 +51,7 @@ Limitations/Todo
 ================
 Files
 ================
-README.txt  
+README.txt
 background.js - code
 images/
 manifest.json - standard Chrome manifest

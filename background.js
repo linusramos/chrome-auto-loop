@@ -22,13 +22,10 @@ if (localStorage["filetype"] == "json") {
    urlFilename = urlFilename + ".txt";
 }
 
-var firstIcon = 1;
-var lastIcon = 5;
-var currentIcon = firstIcon;
 var curUrlIndex = 0;
 var isRunning = 1;
 
-updateIcon();
+updateIcon(isRunning);
 
 // load JSON file with URLs
 var xhr = new XMLHttpRequest();
@@ -62,7 +59,7 @@ function visitUrl() {
             } else {
                 curUrlIndex += 1;
             }
-            updateIcon();
+            updateIcon(isRunning);
 
             // re-set the interval to either default or from JSON
             clearInterval(interval); 
@@ -75,12 +72,11 @@ function visitUrl() {
 
 function toggleRunning() {
     isRunning = isRunning == 1 ? 0 : 1;
-    updateIcon();
+    updateIcon(isRunning);
 }
 
-function updateIcon() {
-    chrome.browserAction.setIcon({path:"images/icon" + currentIcon + ".png"});
-    currentIcon = currentIcon == lastIcon ? firstIcon : currentIcon + 1;
+function updateIcon(isRunning) {
+    chrome.browserAction.setIcon({path:"images/" + isRunning + ".png"});
 }
 
 function parseInput() { 
